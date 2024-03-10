@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet, View, Text, Button } from 'react-native';
+import { SafeAreaView, StyleSheet } from 'react-native';
 import ToDoList from './ToDoList';
 import ToDoForm from './ToDoForm';
 
@@ -28,7 +28,7 @@ const App: React.FC = () => {
   return (
     <SafeAreaView>
       <ToDoList tasks={tasks} />
-      <ToDoForm onAddTask={addTask} />
+      <ToDoForm addTask={addTask} />
     </SafeAreaView>
   );
 };

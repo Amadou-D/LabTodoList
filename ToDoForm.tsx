@@ -1,16 +1,16 @@
 import React, { useState } from 'react';
-import { View, TextInput, Button, StyleSheet } from 'react-native';
+import { View, TextInput, Button, Text, StyleSheet } from 'react-native';
 
 interface ToDoFormProps {
-  onAddTask: (newTaskText: string) => void;
+  addTask: (newTaskText: string) => void;
 }
 
-const ToDoForm: React.FC<ToDoFormProps> = ({ onAddTask }) => {
+const ToDoForm: React.FC<ToDoFormProps> = ({ addTask }) => {
   const [newTask, setNewTask] = useState('');
 
-  const addTask = () => {
+  const handleAddTask = () => {
     if (newTask.trim() !== '') {
-      onAddTask(newTask);
+      addTask(newTask);
       setNewTask('');
     }
   };
@@ -23,7 +23,9 @@ const ToDoForm: React.FC<ToDoFormProps> = ({ onAddTask }) => {
         value={newTask}
         onChangeText={setNewTask}
       />
-      <Button title="Add" onPress={addTask} />
+      <Button title="Add" onPress={handleAddTask}>
+        <Text>Add</Text>
+      </Button>
     </View>
   );
 };
