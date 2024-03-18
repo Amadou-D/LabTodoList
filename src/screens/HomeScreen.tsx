@@ -29,10 +29,11 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ tasks, addTask, navigation }) =
 
 const styles = StyleSheet.create({
   title: {
-    fontSize: 24,
+    fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
     marginBottom: 20,
+    color: 'black',
   },
   form: {
     marginBottom: 20,

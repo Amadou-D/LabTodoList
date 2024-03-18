@@ -10,7 +10,7 @@ const AboutScreen: React.FC<AboutScreenProps> = ({ navigation }) => {
   return (
     <MainLayout>
       <Text style={styles.title}>About Screen</Text>
-      <Text style={styles.description}>TodoList Lab, Amadou Diallo, {new Date().toDateString()}</Text>
+      <Text style={styles.description}>TodoList Lab, Amadou Diallo, Completed Mar 18, 2024</Text>
       <Button title="Go to Home" onPress={() => navigation.navigate('Home')} />
     </MainLayout>
   );
