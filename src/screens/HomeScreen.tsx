@@ -19,7 +19,7 @@ const HomeScreen: React.FC<HomeScreenProps> = ({ tasks, addTask, navigation }) =
     <MainLayout>
       <Text style={styles.title}>Home Screen</Text>
       <ToDoList tasks={tasks} />
-      <ToDoForm addTask={addTask} style={styles.form} />
+      <ToDoForm addTask={addTask} />
       <View style={styles.buttonContainer}>
         <Button title="Go to About" onPress={goToAbout} />
       </View>
@@ -32,10 +32,6 @@ const styles = StyleSheet.create({
     fontSize: 30,
     fontWeight: 'bold',
     textAlign: 'center',
-    marginBottom: 20,
-    color: 'black',
-  },
-  form: {
     marginBottom: 20,
   },
   buttonContainer: {
