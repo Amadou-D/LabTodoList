@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet } from 'react-native';
-import ToDoList from './ToDoList';
-import ToDoForm from './ToDoForm';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
+import HomeScreen from './src/screens/HomeScreen';
+import AboutScreen from './src/screens/AboutScreen';
 
 interface Task {
   id: number;
   text: string;
   completed: boolean;
 }
+
+const Stack = createStackNavigator();
 
 const App: React.FC = () => {
   const [tasks, setTasks] = useState<Task[]>([
@@ -26,10 +29,14 @@ const App: React.FC = () => {
   };
 
   return (
-    <SafeAreaView>
-      <ToDoList tasks={tasks} />
-      <ToDoForm addTask={addTask} />
-    </SafeAreaView>
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen name="Home">
+          {(props) => <HomeScreen {...props} tasks={tasks} addTask={addTask} />}
+        </Stack.Screen>
+        <Stack.Screen name="About" component={AboutScreen} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
